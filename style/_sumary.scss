@@ -1,0 +1,92 @@
+@import 'settings';
+
+$icons:(
+    "1": "/assets/images/icon-reaction.svg",
+    "2": "/assets/images/icon-memory.svg",
+    "3": "/assets/images/icon-verbal.svg",
+    "4": "/assets/images/icon-visual.svg"   
+);
+
+$colors:(
+    "1": $lighRed,
+    "2": $yelow,
+    "3": $teal,
+    "4": $cobalt
+);
+
+.icon{
+
+    width: 20px;
+    height: 20px;
+    display: block;
+
+        @each $id, $icon in $icons{
+            &#a-#{$id}{
+                background: url($icon);
+            }
+        }
+}
+
+@each $id, $color in $colors{
+    #t-#{$id}{
+        background-color: change-color($color, $alpha: 0.2);
+            
+        .item-title{
+            color: $color;
+        }
+    }
+} 
+.summary{
+    width: 50%;
+    box-shadow: 10px 19px 35px 0px rgba(0,0,0,0.75);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    #title{
+        margin-left: 1.2rem;
+        display: flex;
+    }
+
+    &List-items{
+
+        display: flex;
+        margin: 1rem;
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+        border-radius: .5rem;
+        justify-content: space-around;
+
+
+
+        .item-title{
+            display: flex;
+            align-self: flex-start;
+        }
+        .item-ratio{
+            align-self: flex-end;
+        }
+    }
+}
+
+
+.btn{
+    margin: .5rem;
+    padding: 1rem;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    background: $gray-blue;
+    border-radius: 2rem;
+    transition: 0.3s;
+
+    &:hover{
+        background: linear-gradient(0deg, $royal-blue 0%, $slate-blue 90%);
+        color: white;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .summary{
+        width: 100vw;
+    }
+}

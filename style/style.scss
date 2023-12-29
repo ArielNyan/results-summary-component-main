@@ -1,0 +1,80 @@
+@import 'sumary';
+@import 'settings';
+
+
+
+
+p{
+    font-size: 18px;
+}
+
+*{
+    font-family: 'HankenGrotesk';
+}
+
+.card{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+        .result{
+            color: white;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            padding: 1em;
+            background: linear-gradient(0deg, $royal-blue 0%, $slate-blue 90%);
+
+
+            &-points{
+                border-radius: 100%;
+                padding-bottom: 0.5rem;
+                padding-top: 0.5rem;
+                padding-left: 3rem;
+                padding-right: 2.5rem;
+                background: linear-gradient($violet-blue, $persian-blue);
+
+                &_p{
+                    color: $lavender;
+                }
+            }
+        }
+}
+
+#paragraph{
+    color: $lavender;
+    width: 80%;
+}
+
+@media screen and (max-width: 500px){
+    *{
+        overflow-x: hidden;
+    }
+    body{
+        margin: 0;
+    }
+    .card{
+        margin: 0px;
+        width: 100vw;
+        flex-direction: column;
+        position: static;
+        transform: translate(0%, 0%);
+
+        .result{
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            width: 100vw;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,8 @@
+@media screen and (min-width: 100px) and (max-width: 450px) {
+  .card {
+    flex-direction: column;
+    position: fixed;
+    translate: none;
+    width: 100%;
+  }
+}/*# sourceMappingURL=phone.css.map */
